@@ -1,0 +1,21 @@
+<% include partials/header %>
+
+<div class = "ui main text container segment">
+    <div class ="ui huge header">
+        <%= word.name %>
+    <div class = "ui top attached segment">
+        <div class ="content">
+    <h3> Definition: </h3>
+    <p> <%- word.definition %> </h2>
+    <h3> Example: </h3>
+    <p> <%- word.example %> </p>
+    <h3> Last Modified: </h3>
+    <p> <%= word.modified.toDateString() %> </p>
+        </div>
+    </div>
+    </div>
+        <a class ="ui big inverted yellow button" href="/words/<%=word._id%>/edit">EDIT WORD
+        </a>
+</div>
+
+<% include partials/footer %>

@@ -1,0 +1,30 @@
+<% include partials/header %>
+<div class="ui main text container">
+    <div class="ui yellow inverted huge header">
+        WORD WIKI
+    </div>
+    <div class = "ui top attached segment">
+        <div class ="ui divided items">
+            <% words.forEach(function(w){ %>
+                <div class="item">
+                <div class="content">
+                    <h1><a class = "header" href="/words/<%=w._id %>"> <%= w.name %> </a></h1>
+                    <div class ="meta">
+                        <span>
+                            <%= w.modified.toDateString() %>
+                        </span>
+                    </div>
+                    <div class ="description">
+                    <p> <%= w.definition.substring(0,35) %>... </p>
+                    </div>
+                    <div class ="extra">
+                    <a class= "ui small inverted yellow button" href="/words/<%= w._id %>">View Full Definition <i class="right chevron icon"></i></a>
+                    </div>
+                </div>
+            </div>
+            <% }) %>
+    </div>
+</div>
+
+
+<% include partials/footer %>

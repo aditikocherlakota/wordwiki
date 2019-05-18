@@ -1,0 +1,22 @@
+<% include partials/header %>
+
+<div class = "ui main text container segment">
+    <div class ="ui huge header">Edit "<%= word.name %>"</div>
+    <form id="edit" class ="ui form" action="/words/<%= word._id %>?_method=PUT" method="POST">
+        <div class="field">
+            <label>Definition</label>
+            <input type= "text" name="word[definition]" value= "<%= word.definition %>">
+        </div>
+        <div class="field">
+            <label>Example</label>
+            <input type= "text" name="word[example]"  value= "<%= word.example %>">
+        </div>
+        <input class="ui big inverted yellow button" type= "submit">
+
+    </form>
+    <form id="del" action="/words/<%=word._id%>/?_method=DELETE" method="POST">
+        <button class = "ui big inverted yellow button">Delete</button>
+    </form>
+</div>
+
+<% include partials/footer %>
